@@ -27,8 +27,8 @@
             </select>
             </br></br>
             <i class="bx bxs-map-alt ico"></i>
-            <input type="number" placeholder="Longitud" id="longitud" class="border"></br></br>
-            <input type="number" placeholder="Latitud" id="latitud" class="border"></br></br>
+            <input type="number" placeholder="Longitud" id="longitud" class="border" min="-180" max="180"></br></br>
+            <input type="number" placeholder="Latitud" id="latitud" class="border" min="-90" max="90"></br></br>
             <button type="submit" id="btn">Agregar</button>
         </form>
     </div>
@@ -41,5 +41,6 @@
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtuzntCebi4GZUANldSaPI2VqAr5tYcAc&libraries=geometry&callback=initMap" defer>
 </script>
+
 </body>
 </html>
