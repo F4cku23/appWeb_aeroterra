@@ -15,9 +15,11 @@ body{
 }
 
 .container{
+    float: left;
+    margin: 10px;
     background: rgba(255, 255, 255, .4);
-    position: relative;
-    width: 300px;
+    
+    width: 20%;
     height: 300px;
     border-radius: 16px;
     padding: 20px;
@@ -28,7 +30,7 @@ body{
     border: 2px solid black;
     border-radius: 5px;
     left: 50px;
-    position: absolute;
+    position: fixed;
 }
 
 .ico{
@@ -57,3 +59,11 @@ body{
     box-shadow: 0 0 10px black 0 0 20px black 0 0 20px black;
     color: aliceblue;
 }
+
+#maps{
+    margin: 10px;
+    padding: 5px;
+    float: right;
+    height: 700px;
+    width: 80%;
+  }
