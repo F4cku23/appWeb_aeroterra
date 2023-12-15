@@ -1,0 +1,18 @@
+{"aeroterra":
+{
+    "descripcion":"AEROTERRA S.A.",
+    "direccion":"Av. Eduardo Madero 1020, C1001 CABA",
+    "telefono":"1152720900",
+    "position":[-34.595986,-58.3724715]
+    ,
+    "categoria":"Comercial"
+},
+"obelisco":
+{
+    "descripcion":"Obelisco",
+    "direccion":"Av. 9 de Julio s/n, C1043 CABA",
+    "telefono":"",
+    "position":[-34.6037598,-58.3817811]
+    },
+    "categoria":"Mixta"
+}

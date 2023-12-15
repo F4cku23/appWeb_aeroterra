@@ -1,34 +1,40 @@
-window.initMap=function(){
-    // Coordenadas del punto
-    var myLatLng = { lat: -34.595986, lng: -58.3724715 };
+import datosNav from './json/datos.json' assert {type:'json'};
+console.log(typeof(datosNav.aeroterra.position[0]));
 
-    // Crear mapa
+
+window.initMap=function(){
+ 
+    // Coordenadas del punto
+    var myLatLng = { lat: datosNav.aeroterra.position[0], lng: datosNav.aeroterra.position[1]};
+    // Creando mapa
     var map = new google.maps.Map(document.getElementById('maps'), {
       center: myLatLng,
-      zoom: 12
+      zoom: 10
      });
 
      const contentString =
-    '<div id="content">' +
-    '<div id="siteNotice">' +
-    "</div>" +
-    '<h2 id="firstHeading" class="firstHeading">AEROTERRA S.A.</h2>' +
-    '<div id="bodyContent">' +
-    "<p>Av. Eduardo Madero 1020, C1001 CABA</p>" +
-    "<p>-34.595986, -58.3724715</p>" +
-    "</div>" +
-    "</div>";
+     `
+     <div id="content">
+     <div id="siteNotice">
+     </div>
+     <h2 id="firstHeading" class="firstHeading">${datosNav.aeroterra.descripcion}</h2> 
+     <div id="bodyContent">
+     <p>${datosNav.aeroterra.direccion}</p> 
+     <p>${datosNav.aeroterra.categoria}</p> 
+     </div>
+     </div>`
+     ;
 
   const infowindow = new google.maps.InfoWindow({
     content: contentString,
-    ariaLabel: "aeroterra",
+    ariaLabel: datosNav.aeroterra.descripcion,
   });
   
-    // Crear marcador
+    // Creando marcador
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      title: 'AEROTERRA S.A.'
+      title: datosNav.aeroterra.descripcion
     });
 
     marker.addListener("click", () => {
@@ -37,6 +43,5 @@ window.initMap=function(){
           map,
         });
       });
-    
     
 };
