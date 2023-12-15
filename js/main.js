@@ -8,10 +8,35 @@ window.initMap=function(){
       zoom: 12
      });
 
+     const contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h2 id="firstHeading" class="firstHeading">AEROTERRA S.A.</h2>' +
+    '<div id="bodyContent">' +
+    "<p>Av. Eduardo Madero 1020, C1001 CABA</p>" +
+    "<p>-34.595986, -58.3724715</p>" +
+    "</div>" +
+    "</div>";
+
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString,
+    ariaLabel: "aeroterra",
+  });
+  
     // Crear marcador
     var marker = new google.maps.Marker({
       position: myLatLng,
       map: map,
-      title: 'Mi marcador'
+      title: 'AEROTERRA S.A.'
     });
-  }
+
+    marker.addListener("click", () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+        });
+      });
+    
+    
+};
